@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
 import { Switch } from '@nx-project/switch';
-
 import { useState } from 'react';
 
 const meta: Meta<typeof Button> = {
@@ -14,17 +13,18 @@ type Story = StoryObj<typeof Button>;
 
 export const Variants: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <Button variant="text">text</Button>
       <Button variant="outlined">outlined</Button>
       <Button variant="contained">contained</Button>
     </div>
   ),
 };
+
 export const size: Story = {
   render: () => (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="text" size="sm">
           small
         </Button>
@@ -35,7 +35,7 @@ export const size: Story = {
           large
         </Button>
       </div>
-      <div className="flex items-center gap-3">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="outlined" size="sm">
           small
         </Button>
@@ -46,7 +46,7 @@ export const size: Story = {
           large
         </Button>
       </div>
-      <div className="flex items-center gap-3">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="contained" size="sm">
           small
         </Button>
@@ -60,10 +60,11 @@ export const size: Story = {
     </div>
   ),
 };
+
 export const radius: Story = {
   render: () => (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="text" radius="sm">
           small
         </Button>
@@ -74,7 +75,7 @@ export const radius: Story = {
           large
         </Button>
       </div>
-      <div className="flex items-center gap-3">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="outlined" radius="sm">
           small
         </Button>
@@ -85,7 +86,7 @@ export const radius: Story = {
           large
         </Button>
       </div>
-      <div className="flex items-center gap-3">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="contained" radius="sm">
           small
         </Button>
@@ -99,10 +100,11 @@ export const radius: Story = {
     </div>
   ),
 };
+
 export const color: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
-      <div className="flex flex-col gap-2">
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <Button variant="text" color="#009688">
           press me
         </Button>
@@ -113,7 +115,7 @@ export const color: Story = {
           press me
         </Button>
       </div>
-      <div className="flex flex-col gap-2">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <Button variant="text" color="#ff5722">
           press me
         </Button>
@@ -124,7 +126,7 @@ export const color: Story = {
           press me
         </Button>
       </div>
-      <div className="flex flex-col gap-2">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <Button variant="text" color="#8a4af3">
           press me
         </Button>
@@ -141,7 +143,7 @@ export const color: Story = {
 
 export const disabled: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <Button variant="text" color="#009688" disabled>
         text
       </Button>
@@ -154,11 +156,12 @@ export const disabled: Story = {
     </div>
   ),
 };
+
 export const loading: Story = {
   render: () => {
     const [loading, setLoading] = useState(true);
     return (
-      <div className="flex items-center gap-3">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <Button variant="text" loading={loading}>
           text
         </Button>
@@ -168,7 +171,7 @@ export const loading: Story = {
         <Button variant="contained" loading={loading}>
           contained
         </Button>
-        <div className="px-10">
+        <div style={{ padding: '0 40px' }}>
           <Switch
             onChange={(e) => setLoading(e.target.checked)}
             checked={loading}
@@ -179,9 +182,10 @@ export const loading: Story = {
     );
   },
 };
+
 export const withClick: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <Button
         onPress={() => alert('you press me')}
         variant="contained"

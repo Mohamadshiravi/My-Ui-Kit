@@ -22,8 +22,8 @@ export default function Index() {
       </div>
       <div className="flex flex-col gap-3 items-center justify-between border p-4 rounded-md h-[300px]">
         <span className="text-3xl font-bold text-zinc-700">Input</span>
-        <Input variant="normal" placeHolder="normal" />
-        <Input variant="bordered" placeHolder="bordered" />
+        <Input variant="bordered" placeHolder="normal" size="sm" />
+        {/* <Input variant="bordered" placeHolder="bordered" /> */}
         <span className="text-zinc-800">
           run <span className="px-1 font-bold">"nx run input:storybook"</span>{' '}
           to see storybook

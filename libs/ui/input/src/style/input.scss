@@ -1,0 +1,116 @@
+// Variables
+$border-color: #d4d4d8;
+$text-color: #27272a;
+$label-color: #a1a1aa;
+$white: #ffffff;
+
+:root {
+  font-family:sans-serif;
+}
+
+// Main container
+.input {
+  position: relative;
+  display: inline-block;
+  margin-top: 16px;
+  transition: all 0.3s;
+  cursor: text;
+  --color: #3b82f6;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  // Size variations
+  &.sm {
+    min-width: 80px;
+    height: 35px;
+
+    &.bordered {
+      border-radius: 4px;
+      padding: 0 8px;
+    }
+
+    .label {
+      left: 4px;
+    }
+  }
+
+  &.md {
+    min-width: 90px;
+    height: 45px;
+
+    &.bordered {
+      border-radius: 6px;
+      padding: 0 12px;
+    }
+
+    .label {
+      left: 6px;
+    }
+  }
+
+  &.lg {
+    min-width: 120px;
+    height: 55px;
+
+    &.bordered {
+      border-radius: 8px;
+      padding: 0 20px;
+    }
+
+    .label {
+      left: 10px;
+    }
+  }
+
+  // Variants
+  &.normal {
+    border-bottom: 2px solid $border-color;
+
+    &:focus-within {
+      border-color: var(--color);
+    }
+  }
+
+  &.bordered {
+    border: 2px solid $border-color;
+    background: transparent;
+
+    &:focus-within {
+      border-color: var(--color);
+    }
+  }
+
+  // Input field
+  .field {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: $text-color;
+    font-size: inherit;
+    transition: all 0.3s;
+  }
+
+  // Label animation
+  .label {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    transition: all 0.3s;
+    color: $label-color;
+    background: $white;
+    pointer-events: none;
+    font-size: inherit;
+    padding: 0px 4px;
+  }
+
+  // Focus & filled state
+  &:focus-within .label,
+  &.active .label {
+    transform: translateY(-70%)scale(95%);
+    color: var(--color);
+  }
+}

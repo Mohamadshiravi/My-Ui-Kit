@@ -1,0 +1,105 @@
+@import './variables.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &:not(.disabled):active {
+    transform: scale(0.95);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+
+  // Radius
+  &.radius-sm {
+    border-radius: var(--radius-sm);
+  }
+  &.radius-md {
+    border-radius: var(--radius-md);
+  }
+  &.radius-lg {
+    border-radius: var(--radius-lg);
+  }
+
+  // Size
+  &.size-sm {
+    height: var(--btn-height-sm);
+    min-width: var(--btn-min-width-sm);
+    padding: 0 var(--btn-padding-x-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  &.size-md {
+    height: var(--btn-height-md);
+    min-width: var(--btn-min-width-md);
+    padding: 0 var(--btn-padding-x-md);
+    font-size: var(--font-size-md);
+  }
+
+  &.size-lg {
+    height: var(--btn-height-lg);
+    min-width: var(--btn-min-width-lg);
+    padding: 0 var(--btn-padding-x-lg);
+    font-size: var(--font-size-lg);
+  }
+
+  // Variant - Text
+  &.variant-text {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+
+    &:hover:not(.disabled) {
+      background: var(--hover-bg-color);
+    }
+
+    &.disabled {
+      color: var(--disabled-text-color);
+    }
+  }
+
+  // Variant - Outlined
+  &.variant-outlined {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover:not(.disabled) {
+      background: var(--hover-bg-color);
+    }
+
+    &.disabled {
+      color: var(--disabled-text-color);
+      border-color: var(--disabled-bg-color);
+    }
+  }
+
+  // Variant - Contained
+  &.variant-contained {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+
+    &:hover:not(.disabled) {
+      opacity: 0.9;
+    }
+
+    &.disabled {
+      background: var(--disabled-bg-color);
+      color: var(--disabled-text-color);
+    }
+  }
+}

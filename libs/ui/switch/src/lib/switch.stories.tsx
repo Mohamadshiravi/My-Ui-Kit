@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Switch } from '@nx-project/switch';
-
 import { useState } from 'react';
 
 const meta: Meta<typeof Switch> = {
@@ -13,14 +12,15 @@ type Story = StoryObj<typeof Switch>;
 
 export const defaultSwitch: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <Switch />
     </div>
   ),
 };
+
 export const size: Story = {
   render: () => (
-    <div className="flex flex-col gap-3">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
       <Switch size="sm" />
       <Switch size="md" />
       <Switch size="lg" />
@@ -30,7 +30,7 @@ export const size: Story = {
 
 export const color: Story = {
   render: () => (
-    <div className="flex items-center gap-3">
+    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
       <Switch color="#009688" defaultChecked />
       <Switch color="#ff5722" defaultChecked />
       <Switch color="#8a4af3" defaultChecked />
@@ -42,12 +42,14 @@ export const Controlled: Story = {
   render: () => {
     const [checked, setChecked] = useState(false);
     return (
-      <div className="flex items-center gap-10">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
         <Switch
           checked={checked}
           onChange={(e) => setChecked(e.target.checked)}
         />
-        <span className="font-bold text-xl">{checked ? 'on' : 'off'}</span>
+        <span style={{ fontWeight: 'bold', fontSize: '20px' }}>
+          {checked ? 'on' : 'off'}
+        </span>
       </div>
     );
   },

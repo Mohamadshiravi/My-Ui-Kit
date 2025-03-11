@@ -1,0 +1,83 @@
+// Variables
+$default-color: #3b82f6;
+$neutral-bg: #e4e4e7;
+$white: #ffffff;
+$shadow: rgba(0, 0, 0, 0.1);
+
+// Main switch
+.switch {
+  position: relative;
+  display: block;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: $neutral-bg;
+  --color: #{$default-color};
+
+  &.checked {
+    background: var(--color);
+  }
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  .slider {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    aspect-ratio: 1;
+    background: $white;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px $shadow;
+  }
+
+  // Small size
+  &.sm {
+    width: 54px;
+    height: 30px;
+
+    .slider {
+      width: 25px;
+      left: 2px;
+    }
+
+    &.checked .slider {
+      transform: translate(25px, 50%);
+    }
+  }
+
+  // Medium size
+  &.md {
+    width: 74px;
+    height: 40px;
+
+    .slider {
+      width: 35px;
+      left: 2px;
+    }
+
+    &.checked .slider {
+      transform: translate(35px, 50%);
+    }
+  }
+
+  // Large size
+  &.lg {
+    width: 92px;
+    height: 50px;
+
+    .slider {
+      width: 42px;
+      left: 4px;
+    }
+
+    &.checked .slider {
+      transform: translate(42px, 50%);
+    }
+  }
+}

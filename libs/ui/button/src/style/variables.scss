@@ -1,0 +1,31 @@
+// variables.scss
+:root {
+    // رنگ‌ها
+    --primary-color: #3b82f6;
+    --disabled-bg-color: #e4e4e7;
+    --disabled-text-color: #a1a1aa;
+    --hover-bg-color: rgba(228, 228, 231, 0.3);
+  
+    // radius
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+  
+    // سایز
+    --btn-height-sm: 30px;
+    --btn-height-md: 40px;
+    --btn-height-lg: 50px;
+  
+    --btn-min-width-sm: 80px;
+    --btn-min-width-md: 90px;
+    --btn-min-width-lg: 120px;
+  
+    --btn-padding-x-sm: 8px;
+    --btn-padding-x-md: 12px;
+    --btn-padding-x-lg: 20px;
+  
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+  }
+  
